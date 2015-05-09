@@ -1,0 +1,24 @@
+#
+# PuTTY Tunnel Manager
+# AppVeyor configuration
+#
+
+branches:
+  except:
+    - gh-pages
+    - wiki
+
+os: Windows Server 2012
+
+matrix:
+  fast_finish: true     # true => immediately finish build once one of the jobs fails
+
+platform:
+  - Any CPU
+configuration:
+  - Debug
+  - Release
+
+build:
+  project: TunnelManager.sln
+  verbosity: detailed
